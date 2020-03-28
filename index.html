@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Travel</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<header>
+    <section class="travel__header">
+        <div class="header__button">
+            <p class="button__black-line black-line__1"></p>
+            <p class="button__black-line black-line__2"></p>
+            <p class="button__black-line black-line__3"></p>
+
+        </div>
+
+    </section>
+
+</header>
+
+<main class="travel__main">
+    <section class="main__trip">
+
+        <h1 class="trip__title">Зимбабве</h1>
+        <div class="trip__box">
+            <div class="box__tour box__tour_up">
+                <div class="tour__pic tour_pic_1">
+                    <div class="tour__cost">
+                        <p>от 118 112</p>
+                    </div>
+                </div>
+                <p class="tour__country">ИТАЛИЯ</p>
+                <p class="tour__name">Под небом Тосканы</p>
+                <p class="tour__way">
+                    Сансеполькро — (Перуджа) — Ассизи — Губбио — (Сиена) — Ла Верна — </br>
+                    Ангиари — Монтерки — Ареццо — Кортона — (Пиенца) - (Монтепульчано)
+                </p>
+                <p class="tour__period">
+                    8 дней / 7 ночей Русский язык </br>
+                    27.04.19 - 04.05.19 и еще 15 дат
+                </p>
+                <div class="tour__special">
+                    <p>Авиаперелет включен!</p>
+                </div>
+            </div>
+            <div class="box__tour box__tour_right">
+                <div class="tour__pic tour_pic_2">
+                    <div class="tour__cost">
+                        <p>140 715</p>
+                    </div>
+                </div>
+                <p class="tour__country">ИСЛАНДИЯ</p>
+                <p class="tour__name">Майские каникулы в Исландии</p>
+                <p class="tour__way">
+                    Рейкьявик — Тингвеллир — Гюдльфосс — Скафтафедль — Сельяландсфосс — </br>
+                    Скоугафосс — Йёкюльсаурлоун — Голубая Лагуна — Снайфельсйёкутль — Arnarstapi — Рейкьявик
+                </p>
+                <p class="tour__period">
+                    8 дней / 7 ночей Русский язык </br>
+                    27.04.19 - 04.05.19
+                </p>
+
+            </div>
+            <div class="box__tour">
+                <div class="tour__pic tour_pic_3">
+                    <div class="tour__cost">
+                        <p>37 302</p>
+                    </div>
+                </div>
+                <p class="tour__country">ТУРЦИЯ</p>
+                <p class="tour__name">Открытие Турции</p>
+                <p class="tour__way">
+                    Стамбул — Анкара — Каппадокия — Конья — Памуккале — Эфес — Кушадасы — </br>
+                    Пергам — Ассос — Троя — Стамбул
+                </p>
+                <p class="tour__period">
+                    8 дней / 7 ночей Русский язык </br>
+                    28.04.19 - 05.05.19 и еще 3 даты
+                </p>
+
+            </div>
+            <div class="box__tour box__tour_right">
+                <div class="tour__pic tour_pic_4">
+                    <div class="tour__cost">
+                        <p>145 000</p>
+                    </div>
+                </div>
+                <p class="tour__country">НОРВЕГИЯ, ШПИЦБЕРГЕН</p>
+                <p class="tour__name">От Свальбарда до Груманта</p>
+
+                <p class="tour__period">
+                    8 дней / 7 ночей Русский язык </br>
+                    27.04.19 - 04.05.19 и еще 15 дат
+                </p>
+                <div class="tour__special">
+                    <p>Гарантированный тур!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="main__request">
+        <h1 class="request__title">Заявка на подбор путеешествия</h1>
+        <form action="#" class="request__form" method="post" autocomplete="off">
+            <fieldset class="form__about">
+                <p class="about__title-up about__title">НЕМНОГО О ВАС</p>
+                <div class="about__name about__box">
+                    <p class="name_title about__title">ИМЯ <em>*</em></p>
+                    <input name="title" type="text" minlength="10" maxlength="30"
+                           pattern="^[А-Яа-яЁё\s]+$"
+                           placeholder="" required
+                           class="name__input about__input">
+                </div>
+                <div class="about__phone about__box">
+                    <p class="phone__title about__title">ТЕЛЕФОН</p>
+                    <input name="title" type="tel" minlength="11" maxlength="20"
+                           pattern="[+]7\s\d{3}\s\d{3}\s\d{2}\s\d{2}"
+                           placeholder="+7 ___ ___ __ __"
+                           required
+                           class="phone__input about__input">
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form__about form__about-trip">
+                <p class="about__title-up about__title">О ПУТЕШЕСТВИИ</p>
+                <div class="about__name about__box">
+                    <p class="name_title about__title">КУДА И КОГДА ХОТИТЕ ПОЕХАТЬ? <em>*</em></p>
+                    <input name="title" type="text" minlength="5" maxlength="40"
+                           pattern="^[А-Яа-яЁё\s]+$"
+                           placeholder="Континент, страна или город" required
+                           class="name__input about__input">
+                </div>
+                <div class="about__phone about__box">
+                    <p class="phone__title about__title">КОГДА?</p>
+                    <input name="title" type="tel" minlength="1" maxlength="20"
+                           pattern="\-?\d+(\.\d{0,})?"
+                           placeholder="Даты или временной  интервал"
+                           required
+                           class="phone__input about__input">
+                </div>
+
+            </fieldset>
+
+
+            <div class="form__check">
+                <fieldset class="form__about form__about-connection check__box">
+                    <p class="about__title-up about__title">УДОБНЫЙ СПОСОБ СВЯЗИ</p>
+
+                    <div class="about__connection about__check">
+                        <p class="check__p check__p_right_1 check__p_vector_disable">VIBER </p>
+                        <input type="checkbox" class="check__input">
+                        <p class="check__p check__p_right_2 check__p_vector_disable">WHATSAPP </p>
+                        <input type="checkbox" class="check__input">
+                        <p class="check__p check__p_right_3 check__p_vector_disable">ПОЧТА </p>
+                        <input type="checkbox" class="check__input">
+
+                        <p class="check__p check__p_right_4 check__p_vector_disable">ТЕЛЕФОН </p>
+                        <input type="checkbox" class="check__input">
+                    </div>
+                 </fieldset>
+                <fieldset class="form__about form__about-know check__box">
+                    <p class="about__title-up about__title">ОТКУДА УЗНАЛИ О НАС</p>
+                    <div class="about__know about__check">
+                        <p class="check__p check__p_line_height check__p_right_5 check__p_vector_disable">ИНТЕРНЕТ</p>
+                        <input type="checkbox" class="check__input">
+                        <p class="check__p check__p_line_height check__p_right_6 check__p_vector_disable">РЕКОМЕНДОВАЛИ ДРУЗЬЯ</p>
+                        <input type="checkbox" class="check__input">
+                        <p class="check__p check__p_line_height check__p_right_7 check__p_vector_disable">СОЦ. СЕТИ</p>
+                        <input type="checkbox" class="check__input">
+                        <p class="check__p check__p_line_height check__p_right_8 check__p_vector_disable">УЖЕ ЕЗДИЛ</p>
+                        <input type="checkbox" class="check__input">
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="form__agree">
+                <fieldset class="agree__mail agree__fieldset">
+                    <p class="agree__title"><input type="checkbox" class="agree__input">Получать свежие предложения по электронной почте</p>
+                    <p class="agree__p">
+                        Каждую неделю мы делаем для вас обзор лучших экспедиций, статей и лайфхаков для путешественников.
+                        Если вдруг вам не понравится, вы сможете отписаться в любой момент.
+                    </p>
+                </fieldset>
+                <fieldset class="agree__personal agree__fieldset">
+                    <p class="agree__title"><input type="checkbox" class="agree__input">С обработкой своих персональных данных согласен. <em>*</em></p>
+                    <p class="agree__p">
+                        Отправляя заявку я подтверждаю согласие с условиями Пользовательского соглашения
+                    </p>
+
+
+                </fieldset>
+                <p class="agree__sign agree__p"><em>*</em> Поля, которые надо обязательно заполнить</p>
+            </div>
+
+            <button class="form__submit" type="submit"><p>ОТПРАВИТЬ</p></button>
+        </form>
+
+    </section>
+</main>
+
+
+<script src="js/script.js"></script>
+
+
+</body>
+</html>
