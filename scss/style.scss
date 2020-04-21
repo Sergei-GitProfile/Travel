@@ -15,10 +15,12 @@ body {
 header {
   margin: 0 auto 0 auto;
   background-color: #FFD241;
+
+
 }
 
 .travel__header {
-  margin: 0;
+  margin: 0 auto 0 auto;
   padding: 0;
   max-width: 1024px;
   height: 70px;
@@ -26,6 +28,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: right;
+
+  position: relative;
+
+
 }
 
 .header__button {
@@ -65,6 +71,8 @@ header {
   margin: 0 auto 0 auto;
   padding: 0;
   max-width: 1024px;
+
+
 }
 
 .main__trip {
@@ -549,6 +557,12 @@ header {
 
 }
 
+
+.agree__title_vector_disable::after {
+  background-image: none;
+
+}
+
 .agree__p {
   font-family: "Museo Sans Cyrl", sans-serif;
   font-size: 10px;
@@ -655,3 +669,674 @@ header {
 
 /*конец стилей  main__form*/
 /*конец стилей main*/
+
+
+
+
+/* стили всплывающего меню*/
+
+.modal {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  max-width: 530px;
+  width: 100%;
+  height: 1366px;
+  background: #FFD241;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.modal__closed {
+  display: none;
+}
+
+.modal__opened {
+  display: flex;
+}
+
+.modal-open:hover,
+.modal-open:focus{
+  cursor: pointer;
+}
+
+.modal-close {
+  width: 24.04px;
+  height: 24.04px;
+  font-size: 0;
+  border: 0;
+  background: #FFD241;
+  cursor: pointer;
+
+  position: absolute;
+  top: 21.27px;
+  right: 19.27px;
+}
+
+
+.modal-close:hover,
+.modal-close:focus{
+  cursor: pointer;
+}
+
+
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  width: 30px;
+  height: 4px;
+  border-radius: 0;
+  background-color: #FFFFFF;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+
+%font-modal_button {
+    font-family: Museo Sans Cyrl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+
+}
+
+.modal-button__arrow {
+  width: 9px;
+  height: 5px;
+  position: absolute;
+  top: 23px;
+  right: 30px;
+
+  padding: 0;
+  border-width: 0;
+
+  background-image: url("../img/modal_vector.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal-button__arrow_big {
+  width: 9px;
+  height: 5px;
+  position: absolute;
+  top: 23px;
+  right: 30px;
+
+  padding: 0;
+  border-width: 0;
+
+  background-image: url("../img/modal_vector_big.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.modal-button__arrow_close {
+  display: none;
+}
+
+.modal-button__clean {
+  display: none;
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  top: 19px;
+  right: 10px;
+
+  padding: 0;
+  border-width: 0;
+
+  background-image: url("../img/modal-clean.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal-button__clean_open {
+  display: block;
+
+}
+
+.modal__menus {
+  max-width: 280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+
+  margin: 101px 0 0 0;
+
+}
+
+.modal__country {
+  position: relative;
+  width: 150px;
+  height: 49px;
+
+  background: #FFFFFF;
+  border-radius: 29.5px;
+
+  margin: 0 10px 18px 0;
+
+  .modal__p {
+    @extend %font-modal_button;
+    position: absolute;
+    width: 100px;
+    height: 15px;
+    left: 30px;
+    top: 17px;
+    margin: 0;
+
+    //overflow: hidden;
+
+  }
+
+}
+
+.modal__date {
+  position: relative;
+  width: 120px;
+  height: 49px;
+
+
+  background: #FFFFFF;
+  border-radius: 29.5px;
+  margin: 0 0 18px 0;
+
+  p{
+    @extend %font-modal_button;
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    left: 30px;
+    top: 17px;
+    margin: 0;
+  }
+
+  .modal-button__arrow {
+
+    top: 23px;
+    right: 23px;
+  }
+
+
+}
+
+.modal__kind {
+  position: relative;
+  width: 280px;
+  height: 49px;
+
+
+  background: #FFFFFF;
+  border-radius: 29.5px;
+  p{
+    @extend %font-modal_button;
+    position: absolute;
+    width: 98px;
+    height: 15px;
+    left: 30px;
+    top: 17px;
+    margin: 0;
+
+
+  }
+
+  .modal-button__arrow {
+
+    top: 24px;
+    right: 23px;
+  }
+}
+
+
+
+.modal-button__arrow:hover,
+.modal-button__arrow:focus {
+  cursor: pointer;
+}
+
+.modal__country p:hover,
+.modal__country p:focus,
+.modal__date p:hover,
+.modal__date p:focus,
+.modal__kind p:hover,
+.modal__kind p:focus {
+  cursor: pointer;
+}
+
+.modal__nav {
+  position: relative;
+  width: 157px;
+  height: 153px;
+  margin: 68px 0 0 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 153px;
+  font-family: Museo Sans Cyrl;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+  color: #141414;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    cursor: pointer;
+  }
+}
+
+.modal__tel {
+  position: relative;
+  width: 263px;
+  height: 29px;
+  margin: 771px 0 0 0;
+
+  font-family: Museo Sans Cyrl;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 900;
+
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  color: #141414;
+
+  p{
+    margin: 0;
+  }
+
+}
+
+.modal-button__decide {
+
+  position: relative;
+  width: 280px;
+  height: 49px;
+
+
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 29.5px;
+
+  background-color: #FFD241;
+
+  margin: 24px 0 0 0;
+
+  p{
+    position: absolute;
+    width: 126px;
+    height: 15px;
+    left: 74px;
+    top: 17px;
+
+    font-family: Museo Sans Cyrl;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #000000;
+    margin: 0;
+  }
+
+  p:hover,
+  p:focus {
+    cursor: pointer;
+  }
+}
+
+
+/*стили меню modal__country_big*/
+.modal__country_big {
+  display: none;
+ // display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+
+  z-index: 9999;
+  position: absolute;
+  width: 283px;
+  height: 540px;
+  overflow: scroll;
+  background: #FFFFFF;
+  border-radius: 29.5px;
+
+   margin: 0;
+
+
+.modal-button__arrow {
+  background-image: url("../img/modal_vector_big.png");
+
+}
+
+
+.modal__p {
+    @extend %font-modal_button;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 44px;
+    height: 15px;
+    margin: 17px 0 0 30px;
+  }
+
+
+
+  .modal__p_gold {
+    font-family: Museo Sans Cyrl;
+    font-size: 10px;
+    line-height: 10px;
+    text-transform: uppercase;
+    color: #FFD241;
+    text-transform: uppercase;
+    padding: 9px 0 0 14px;
+  }
+
+  scrollbar-color: #C4C4C4 #ffffff;     /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin ;  /* толщина */
+
+}
+
+
+.title__country {
+  margin: 24px 0 0 30px;
+  font-family: Museo Sans Cyrl;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: bold;
+  color: #000000;
+}
+
+
+
+.list__country {
+  list-style-type: none;
+  margin: 20px 0 0 30px;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+
+
+  li {
+    width: 206px;
+    height: 28px;
+    border-radius: 15px;
+  }
+
+  li:hover,
+  li:focus {
+    background: rgba(196, 196, 196, 0.3);
+  }
+
+  li p {
+    padding: 5px 0 0 14px;
+    margin: 0;
+    font-family: Museo Sans Cyrl;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000000;
+
+  }
+
+}
+
+.modal__country_big_open {
+  display: flex;
+}
+
+.list__country_open {
+  display: flex;
+}
+
+
+.country__select {
+  width: 280px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+/*стили выбора даты*/
+
+.modal__date_big {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 283px;
+  height: 363px;
+  background: #FFFFFF;
+  border-radius: 29.5px;
+  margin: 0 0 18px 0;
+  z-index: 999;
+
+}
+
+.modal__date_big_open {
+  display: block;
+
+}
+
+.datepicker-here {
+  width: 200px;
+  height: 20px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  padding: 0;
+  border-width: 0;
+  text-align: center;
+  color: #000000;
+  text-align: left;
+}
+
+
+.date_from,
+.date_to {
+  display: none;
+}
+
+
+/*стили календаря*/
+
+.datepicker {
+border-width: 0;
+  box-shadow: none;
+}
+
+.datepicker--pointer {
+display: none;
+}
+
+.datepicker--content {
+
+}
+
+.datepicker--nav {
+  font-family: Museo Sans Cyrl;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.datepicker--nav-title {
+  font-family: Museo Sans Cyrl;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  i {
+    font-family: Museo Sans Cyrl;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+}
+
+.datepicker--days {
+
+}
+
+.datepicker--days-names {
+  font-family: Museo Sans Cyrl;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #000000;
+}
+
+
+.datepicker--cell {
+  font-family: Museo Sans Cyrl;
+  font-size: 12px;
+  line-height: 35px;
+
+  color: #000000;
+}
+
+.datepicker--cell.-range-from- {
+  color: #000000;
+  border-width: 0;
+  background-color: yellow;
+  border-radius: 16px;
+}
+
+
+.datepicker--cell.-in-range- {
+  background: #d3d3d3;
+  color: #000000;
+  border-radius: 0;
+}
+
+.datepicker--cell.-range-to- {
+  color: #000000;
+  border-width: 0;
+  background-color: yellow;
+  border-radius: 16px;
+}
+
+
+
+
+/*стили меню modal__kind_big*/
+.modal__kind_big {
+  display: none;
+  // display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+
+  z-index: 999;
+  position: absolute;
+  width: 283px;
+  height: 381px;
+  overflow: scroll;
+  background: #FFFFFF;
+  border-radius: 29.5px;
+  margin: 0;
+
+
+  .modal-button__arrow {
+    background-image: url("../img/modal_vector_big.png");
+  }
+
+
+  .modal__p {
+    @extend %font-modal_button;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 15px;
+    margin: 17px 0 0 30px;
+  }
+}
+
+
+
+.list__kind {
+  list-style-type: none;
+  margin: 20px 0 0 46px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+
+  li {
+    width: 206px;
+    height: 28px;
+    border-radius: 15px;
+    margin: 10px 0 0 0;
+    position: relative;
+
+  }
+
+  li:hover,
+  li:focus {
+    background: rgba(196, 196, 196, 0.3);
+  }
+
+  li p {
+    padding: 5px 0 0 14px;
+    margin: 0;
+    font-family: Museo Sans Cyrl;
+    font-size: 14px;
+    //line-height: 14px;
+    color: #000000;
+    position: relative;
+    top: 0;
+    left: 0;
+
+  }
+
+}
+
+.modal__kind_big_open {
+  display: flex;
+}
+
+
+.kind__select {
+  width: 280px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+/* конец стилей всплывающего меню*/
+
+

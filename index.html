@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="">
+    <link href="css/datepicker.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet">
+
     <title>Travel</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -12,14 +14,250 @@
 
 <header>
     <section class="travel__header">
-        <div class="header__button">
+        <div class="header__button modal-open">
             <p class="button__black-line black-line__1"></p>
             <p class="button__black-line black-line__2"></p>
             <p class="button__black-line black-line__3"></p>
 
         </div>
 
+
+        <form class="modal modal__closed" action="#" method="post">
+
+            <button class="modal-close" type="button">Закрыть</button>
+            <div class="modal__menus">
+                <div class="modal__country">
+                    <p class="modal__p">Страны</p>
+                    <button class="modal-button__arrow" type="button"></button>
+                    <button class="modal-button__clean" type="button"></button>
+
+                    <div class="modal__country_big">
+                        <p class="modal__p">Страны</p>
+                        <button class="modal-button__arrow" type="button"></button>
+                        <h1 class="title__country">Южная Америка</h1>
+                        <ul class="list__country">
+                            <li><p class="country">Аргентина</p></li>
+                            <li><p class="country">Бразилия</p></li>
+                            <li><p class="country">Перу</p></li>
+                            <li><p class="country">Уругвай</p></li>
+                            <li><p class="country">Чили</p></li>
+                            <li><p class="country">Эквадор</p></li>
+                            <li><p class="modal__p_gold country">все туры в Южную Америку</p></li>
+                        </ul>
+
+                        <h1 class="title__country">Северная Америка</h1>
+                        <ul class="list__country">
+                            <li><p class="country">Канада</p></li>
+                            <li><p class="country">США</p></li>
+                            <li><p class="country">Гренландия</p></li>
+                            <li><p class="country">Мексика</p></li>
+                            <li><p class="modal__p_gold country">все туры в Северную Америку</p></li>
+                        </ul>
+
+                        <h1 class="title__country">Арктика и Антарктика</h1>
+                        <ul class="list__country">
+                            <li><p class="country">Арктика</p></li>
+                            <li><p class="country">Антарктика</p></li>
+                            <li><p class="modal__p_gold country">все туры в Арктику и Антарктику</p></li>
+                        </ul>
+
+                        <h1 class="title__country">Австралия и Океания</h1>
+                        <ul class="list__country">
+                            <li><p class="country">Австралия</p></li>
+                            <li><p class="country">Новая Зеландия</p></li>
+                            <li><p class="country">Папуа — Новая Гвинея</p></li>
+                            <li><p class="country">Фиджи</p></li>
+                            <li><p class="country">Тувалу</p></li>
+                            <li><p class="country">остров Пасхи</p></li>
+                            <li><p class="modal__p_gold">все туры в Австралию и Океанию</p></li>
+                        </ul>
+
+                        <h1 class="title__country">Европа</h1>
+                        <ul class="list__country">
+                            <li><p class="country">Великобритания</p></li>
+                            <li><p class="country">Германия</p></li>
+                            <li><p class="country">Нидерланды</p></li>
+                            <li><p class="country">Италия</p></li>
+                            <li><p class="country">Австрия</p></li>
+                            <li><p class="country">Чехия</p></li>
+                            <li><p class="country">Дания</p></li>
+                            <li><p class="country">Норвегия</p></li>
+                            <li><p class="country">Финляндия</p></li>
+                            <li><p class="country">Швеция</p></li>
+                            <li><p class="country">Исландия</p></li>
+                            <li><p class="country">Бельгия</p></li>
+                            <li><p class="modal__p_gold country">все туры в Европу</p></li>
+                        </ul>
+
+                        <h1 class="title__country">Россия</h1>
+                        <ul class="list__country">
+                            <li><p class="country">Москва</p></li>
+                            <li><p class="country">Санкт-Петербург</p></li>
+                            <li><p class="country">Байкал</p></li>
+                            <li><p class="country">Камчатка</p></li>
+                            <li><p class="country">Карелия</p></li>
+                            <li><p class="country">Казань</p></li>
+                            <li><p class="modal__p_gold country">все туры по России</p></li>
+                        </ul>
+
+                        <h1 class="title__country">Азия</h1>
+                        <ul class="list__country">
+                            <li><p class="country">Япония</p></li>
+                            <li><p class="country">Республика Корея</p></li>
+                            <li><p class="country">Сингапур</p></li>
+                            <li><p class="country">Гонконг</p></li>
+                            <li><p class="country">Китай</p></li>
+                            <li><p class="country">Непал</p></li>
+                            <li><p class="modal__p_gold country">все туры в Азию</p></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <select class="country__select" id="countrySelect">
+                    <option>Аргентина</option>
+                    <option>Бразилия</option>
+                    <option>Перу</option>
+                    <option>Уругвай</option>
+                    <option>Чили</option>
+                    <option>Эквадор</option>
+                    <option>все туры в Южную Америку</option>
+                    <option>Канада</option>
+                    <option>США</option>
+                    <option>Гренландия</option>
+                    <option>Мексика</option>
+                    <option>все туры в Северную Америку</option>
+                    <option>Арктика</option>
+                    <option>Антарктика</option>
+                    <option>все туры в Арктику и Антарктику</option>
+                    <option>Австралия</option>
+                    <option>Новая Зеландия</option>
+                    <option>Папуа — Новая Гвинея</option>
+                    <option>Фиджи</option>
+                    <option>Тувалу</option>
+                    <option>остров Пасхи</option>
+                    <option>все туры в Австралию и Океанию</option>
+                    <option>Великобритания</option>
+                    <option>Германия</option>
+                    <option>Нидерланды</option>
+                    <option>Италия</option>
+                    <option>Австрия</option>
+                    <option>Чехия</option>
+                    <option>Дания</option>
+                    <option>Норвегия</option>
+                    <option>Финляндия</option>
+                    <option>Швеция</option>
+                    <option>Исландия</option>
+                    <option>Бельгия</option>
+                    <option>все туры в Европу</option>
+                    <option>Москва</option>
+                    <option>Санкт-Петербург</option>
+                    <option>Байкал</option>
+                    <option>Камчатка</option>
+                    <option>Карелия</option>
+                    <option>Казань</option>
+                    <option>все туры по России<</option>
+                    <option>Япония</option>
+                    <option>Республика Корея</option>
+                    <option>Сингапур</option>
+                    <option>Гонконг</option>
+                    <option>Китай</option>
+                    <option>Непал</option>
+                    <option>все туры в Азию</option>
+
+                </select>
+
+
+
+
+
+                 <div class="modal__date">
+                     <p class="modal__p">Даты</p>
+                     <button class="modal-button__arrow" type="button"></button>
+                     <button class="modal-button__clean" type="button"></button>
+
+
+
+                     <div class="modal__date_big">
+                         <p class="modal__p">Даты</p>
+                         <button class="modal-button__arrow_big" type="button"></button>
+                         <input type='text' class="datepicker-here"
+
+                                data-range="true"
+
+                                data-multiple-dates-separator=" - "/>
+
+                     </div>
+
+
+                 </div>
+                <input class="date_from" type="date">
+                <input class="date_to" type="date">
+
+                <div class="modal__kind">
+                    <p class="modal__p">Тип путешествия</p>
+                    <button class="modal-button__arrow" type="button"></button>
+                    <button class="modal-button__clean" type="button"></button>
+
+                    <div class="modal__kind_big">
+                        <p class="modal__p">Тип путешествия</p>
+                        <button class="modal-button__arrow" type="button"></button>
+                        <ul class="list__kind">
+                            <li><p class="kind">Активный</p></li>
+                            <li><p class="kind">Майские</p></li>
+                            <li><p class="kind">На авто</p></li>
+                            <li><p class="kind">На корабле</p></li>
+                            <li><p class="kind">Новый год</p></li>
+                            <li><p class="kind">Поход</p></li>
+                            <li><p class="kind">Серфинг</p></li>
+                            <li><p class="kind">Эксклюзив</p></li>
+                            <li><p class="kind">Экскурсионный</p></li>
+                            <li><p class="kind">Экспедиция</p></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <select class="kind__select" id="kindSelect">
+                    <option>Активный</option>
+                    <option>Майские</option>
+                    <option>На авто</option>
+                    <option>На корабле</option>
+                    <option>Новый год</option>
+                    <option>Поход</option>
+                    <option>Серфинг</option>
+                    <option>Эксклюзив</option>
+                    <option>Экскурсионный</option>
+                    <option>Экспедиция</option>
+                </select>
+
+
+
+            </div>
+
+            <div class="modal__nav">
+                <p><a>ПУТЕШЕСТВИЯ</a></p>
+                <p><a>О НАС</a></p>
+                <p><a>ОТЗЫВЫ</a></p>
+                <p><a>БЛОГ</a></p>
+
+            </div>
+
+            <div class="modal__tel">
+                <p>+7 (495) 123-45-67</p>
+            </div>
+
+            <button class="modal-button__decide" type="submit"><p>ПОДБЕРИТЕ МНЕ ТУР</p></button>
+
+        </form>
+
     </section>
+
+
+
+
+
+
+
 
 </header>
 
@@ -181,14 +419,16 @@
 
             <div class="form__agree">
                 <fieldset class="agree__mail agree__fieldset">
-                    <p class="agree__title"><input type="checkbox" class="agree__input">Получать свежие предложения по электронной почте</p>
+                    <p class="agree__title agree__title_vector_disable">Получать свежие предложения по электронной почте</p>
+                    <input type="checkbox" class="agree__input">
                     <p class="agree__p">
                         Каждую неделю мы делаем для вас обзор лучших экспедиций, статей и лайфхаков для путешественников.
                         Если вдруг вам не понравится, вы сможете отписаться в любой момент.
                     </p>
                 </fieldset>
                 <fieldset class="agree__personal agree__fieldset">
-                    <p class="agree__title"><input type="checkbox" class="agree__input">С обработкой своих персональных данных согласен. <em>*</em></p>
+                    <p class="agree__title agree__title_vector_disable">С обработкой своих персональных данных согласен. <em>*</em></p>
+                    <input type="checkbox" class="agree__input">
                     <p class="agree__p">
                         Отправляя заявку я подтверждаю согласие с условиями Пользовательского соглашения
                     </p>
@@ -202,8 +442,16 @@
         </form>
 
     </section>
+
+
+
+
+
+
 </main>
 
+
+<script src="js/datepicker.js"></script>
 
 <script src="js/script.js"></script>
 
