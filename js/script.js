@@ -47,7 +47,7 @@ $(function(){
     });
 
 
-    $(".modal-button__clean").click(function () {
+    $(".modal__country .modal-button__clean").click(function () {
         $(".modal__country .modal__p").text( 'Страна' );
         $(".modal__country .modal-button__clean").removeClass("modal-button__clean_open");
         $(".modal__country .modal-button__arrow").removeClass("modal-button__arrow_close");
@@ -118,44 +118,34 @@ $(function(){
 
 
 
+
+
+
     /*выбор двух дат в календаре*/
 
-  $("body").on("click", function () {
 
 
-      $(".datepicker--cell-day").click(function () {
-            $(".-range-from-").trigger('click');
 
-      });
-
-            $(".-range-to-").click(function () {
-
-                var dateFrom = $(".-range-from-").data('date');
-                var monthFrom = $(".-range-from-").data('month');
-                var dateFrom2 = '0' + dateFrom;
-                var monthFrom2 = '0' + monthFrom;
-                var dateFrom3 =   dateFrom2.substr(-2, 2)
-                var monthFrom3 =   monthFrom2.substr(-2, 2)
-                var dateTo = $(".-range-to-").data('date');
-                var monthTo = $(".-range-to-").data('month');
-                var dateTo2 = '0' + dateTo;
-                var monthTo2 = '0' + monthTo;
-                var dateTo3 =   dateTo2.substr(-2, 2)
-                var monthTo3 =   monthTo2.substr(-2, 2)
-                var str =  dateFrom3  + '.' + monthFrom3 + '-' + dateTo3  + '.' + monthTo3;
-                $(".modal__date .modal__p:first").text( str );
-                $(".modal__date .modal-button__arrow").addClass("modal-button__arrow_close");
-                $(".modal__date .modal-button__clean").addClass("modal-button__clean_open");
-
-           });
-
+   $("body").on("click", function () {
+         if($(".datepicker--cell-day").hasClass("-range-to-") ) {
+             var dateFrom = $(".-range-from-").data('date');
+             var monthFrom = $(".-range-from-").data('month');
+             var dateFrom2 = '0' + dateFrom;
+             var monthFrom2 = '0' + monthFrom;
+             var dateFrom3 =   dateFrom2.substr(-2, 2)
+             var monthFrom3 =   monthFrom2.substr(-2, 2)
+             var dateTo = $(".-range-to-").data('date');
+             var monthTo = $(".-range-to-").data('month');
+             var dateTo2 = '0' + dateTo;
+             var monthTo2 = '0' + monthTo;
+             var dateTo3 =   dateTo2.substr(-2, 2)
+             var monthTo3 =   monthTo2.substr(-2, 2)
+             var str =  dateFrom3  + '.' + monthFrom3 + '-' + dateTo3  + '.' + monthTo3;
+             $(".modal__date .modal__p").text( str );
+             $(".modal__date .modal-button__arrow").addClass("modal-button__arrow_close");
+             $(".modal__date .modal-button__clean").addClass("modal-button__clean_open");
+         }
     });
-
-
-
-
-
-
 
 
 
@@ -184,19 +174,25 @@ $(function(){
             var dataTO = yearTo + '-' + monthTo3 + '-' + dateTo3;
             var To = document.querySelector('.date_to');
             To.value = dataTO;
-
-
-        $(".modal-button__clean").click(function () {
-            $(".modal__date .modal__p").text( 'Дата' );
-            $(".modal__date .modal-button__clean").removeClass("modal-button__clean_open");
-            $(".modal__date .modal-button__arrow").removeClass("modal-button__arrow_close");
-            var dataFrom = '';
-            var From = document.querySelector('.date_from');
-            From.value = dataFrom;
-        });
-
     });
 
+
+
+    $(".modal__date .modal-button__clean").on( "click", function() {
+        //alert("ghbdtn")
+        if($(".datepicker--cell-day").hasClass("-range-to-") ) {
+            $(".datepicker--cell-day").removeClass("-range-to-");
+        }
+
+        if($(".datepicker--cell-day").hasClass("-range-from-") ) {
+            $(".datepicker--cell-day").removeClass("-range-from-");
+        }
+
+
+        $(".modal__date .modal__p").text("Даты");
+        $(".modal__date .modal-button__clean").removeClass("modal-button__clean_open");
+        $(".modal__date .modal-button__arrow").removeClass("modal-button__arrow_close");
+    });
 
 
 
@@ -213,7 +209,7 @@ $(function(){
     });
 
 
-    $(".modal-button__clean").click(function () {
+    $(".modal__kind .modal-button__clean").click(function () {
         $(".modal__kind .modal__p").text( 'Тип путешествия' );
         $(".modal__kind .modal-button__clean").removeClass("modal-button__clean_open");
         $(".modal__kind .modal-button__arrow").removeClass("modal-button__arrow_close");

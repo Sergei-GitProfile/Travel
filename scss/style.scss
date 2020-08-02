@@ -812,6 +812,12 @@ header {
 
 }
 
+
+.modal-button__clean:focus,
+.modal-button__clean:hover{
+  cursor: pointer;
+}
+
 .modal__menus {
   max-width: 280px;
   display: flex;
